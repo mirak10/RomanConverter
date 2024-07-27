@@ -9,8 +9,7 @@ static::vector < pair <string, int >> romanNumbers = {
 		{"I" , 1}
 };
 
-toRoman::toRoman() {};
-toRoman::toRoman(int number) {};
+
 string toRoman::convertToRoman(int number) {
 	string result;
 
@@ -42,5 +41,7 @@ void toRoman::romConv() {
 		string roman = convertToRoman(number);
 
 		cout << "The answer is: " << roman << endl;
+		cout << "Convert another number? (y/n): " << endl;
+		cin >> choice;
 	} while (choice == 'y' || choice == 'Y');
 };

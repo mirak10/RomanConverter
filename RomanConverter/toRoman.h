@@ -12,8 +12,6 @@ private:
 	string roman;
 
 public:
-	toRoman();
-	toRoman(int);
 	string convertToRoman(int);
 	void romConv();
 };
