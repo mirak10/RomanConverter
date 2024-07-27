@@ -11,8 +11,13 @@ static::vector < pair <string, int >> romanNumbers = {
 
 
 string toRoman::convertToRoman(int number) {
+	ofstream outFile("history.txt",ios::app);
+	if (!outFile) {
+		// Error opening file
+		cerr << "File not found!" << endl;
+	}
 	string result;
-
+	int saved_number = number;
 	// Iterate over each pair of Roman numeral symbol and its value
 	for (const auto& numeral : romanNumbers) {
 		// Access the symbol and value using the pair's members
@@ -28,6 +33,11 @@ string toRoman::convertToRoman(int number) {
 		}
 	}
 	//Return final result
+	outFile << saved_number << '\t'
+		<< "=" << '\t'
+		<< result << '\t' << endl;
+
+
 	return result;
 };
 
